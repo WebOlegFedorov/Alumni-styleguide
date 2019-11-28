@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./bundle.css">
+</head>
+<body class="sidebar-page-body">
+
+    <!-- Header black menu(hidden if sreen size is less then 1024px) -->
+    <header class="mdc-top-app-bar app-bar sidebar-page-header profile__header" id="app-bar">
+        <!-- Humburger icon -->
+        <a href="#" class="demo-menu material-icons mdc-top-app-bar__navigation-icon">menu</a>
+        <div class="profile__header-menu universal__header-menu">
+            <button class="profile__header-button mdc-button">Home</button>
+            <button class="profile__header-button mdc-button">Why us</button>
+            <div class="profile__menu-container">
+                <button class="profile__header-button mdc-button open-submenu">
+                    Courses
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </button>
+                <div class="mdc-menu mdc-menu-surface">
+                    <ul class="mdc-list" role="menu" aria-hidden="true" aria-orientation="vertical" tabindex="-1">
+                        <li class="mdc-list-item" role="menuitem">
+                            <span class="mdc-list-item__text">A Menu Item</span>
+                        </li>
+                        <li class="mdc-list-item" role="menuitem">
+                            <span class="mdc-list-item__text">Another Menu Item</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="profile__header-button mdc-button">Location</button>
+            <button class="profile__header-button mdc-button">Contact us</button>
+            <button class="profile__header-button mdc-button link">Alumni</button>
+        </div>
+        <button class="profile__header-button mdc-button blue universal__header-btn">Enrol now</button>
+    </header>
+
+    <!-- Menu wich becomes visible if screen size is less then 1024px. Menu appears after click on humburger -->
+    <aside class="mdc-drawer mdc-drawer--modal universal-drawer">
+        <div class="mdc-drawer__content">
+            <nav class="mdc-list ">
+                <a class="mdc-list-item mdc-list-item--activated" href="#" aria-current="page">Home</a>
+                <a class="mdc-list-item href="#">Why us</a>
+                <a class="mdc-list-item href="#">Courses</a>
+                <a class="mdc-list-item mdc-list-subitem" href="#">Course 1</a>
+                <a class="mdc-list-item mdc-list-subitem" href="#">Course 2</a>
+                <a class="mdc-list-item href="#">Location</a>
+                <a class="mdc-list-item href="#">Contact us</a>
+                <a class="mdc-list-item href="#">Alumni</a>
+            </nav>
+        </div><!--end of mdc-drawer__content -->
+    </aside>
+    <div class="mdc-drawer-scrim"></div>
+  
+    <!--WRAPPER FOR ALL CONTENT EXCEPT DRAWER AND HEADER-->
+    <div class="mdc-drawer-app-content mdc-top-app-bar--fixed-adjust">
+        <main class="main-content universal-drawer--main-content" id="main-content">
+            <!-- WRAPPER FOR SEARCHBAR AND CANDIDATES -->
+            <div>
+                <!-- FIND ALUMNI BLOCK(WITH SEARCHBAR) -->
+                <div class="find-alumni--search">
+                    <div class="find-alumni--search-wrapper">
+                        <p class="find-alumni--search-header">Find Alumni </p>
+                        <p class="find-alumni--search-results"><span>77</span> matching results</p>
+                        <div class="input-and-filters">
+                            <input class="find-alumni--search-input" type="text" placeholder="Type skill in here">
+                            <a href="#" class="find-alumni--search-filters">Filters</a>
+                        </div>
+                        <!-- Block with all skills -->
+                        <div class="find-alumni--skills-wrapper">
+                            <button class="mdc-chip mdc-chip--one-skill find-alumni--one-skill">
+                                <span class="mdc-chip__text">Javascript</span>
+                                <i class="material-icons">highlight_off</i>
+                            </button>
+        
+                            <button class="mdc-chip mdc-chip--one-skill find-alumni--one-skill">
+                                <span class="mdc-chip__text">Html 5</span>
+                                <i class="material-icons">highlight_off</i>
+                            </button>
+        
+                            <button class="mdc-chip mdc-chip--one-skill find-alumni--one-skill">
+                                <span class="mdc-chip__text">CSS3 </span>
+                                <i class="material-icons">highlight_off</i>
+                            </button>
+        
+                            <button class="mdc-chip mdc-chip--one-skill find-alumni--one-skill">
+                                <span class="mdc-chip__text">Javascript</span>
+                                <i class="material-icons">highlight_off</i>
+                            </button>
+        
+                            <button class="mdc-chip mdc-chip--one-skill find-alumni--one-skill">
+                                <span class="mdc-chip__text">Html 5</span>
+                                <i class="material-icons">highlight_off</i>
+                            </button>
+        
+                            <button class="mdc-chip mdc-chip--one-skill find-alumni--one-skill">
+                                <span class="mdc-chip__text">CSS3 </span>
+                                <i class="material-icons">highlight_off</i>
+                            </button>
+                        </div><!-- end of find-alumni--skills-wrapper-->
+                    </div><!-- end of find-alumni--search-wrapper-->
+                </div><!-- end of find-alumni--search-->
+        
+                <!-- FIND ALUMNI CANDIDATES -->
+                <div class="find-alumni--candidates">
+                    <div class="find-alumni--candidates--wraper">
+                        <!-- TOP PAGINATION -->
+                        <div class="pagination find-alumni--pagination-top">
+                            <button class="pagination-btn mdc-button pagination-btn-previous">
+                                <span class="mdc-button__label">Previous</span>
+                            </button>
+                            <div class="pagination-numbers">
+                                <span class="pagination-numbers--item">1</span>    
+                                <span class="pagination-numbers--item">2</span>  
+                                <span class="pagination-numbers--item pagination-numbers--item-active">3</span>  
+                                <span class="pagination-numbers--item">4</span>  
+                                <span class="pagination-numbers--item">5</span>  
+                            </div>
+                            <button class="pagination-btn mdc-button pagination-btn-next">
+                                <span class="mdc-button__label">Next</span>
+                            </button>
+                        </div>
+        
+                        <!-- CANDIDATES -->
+                        <div class="find-alumni--candidates-block">
+                            <!-- One candidate -->
+                            <div class="one-candidate">
+                                <p class="candidate-name">Irinia Kurkina </p>
+                                <div class="candidate-photo"><img src="assets/images/candidate-photo.png" alt=""></div>
+                                <p class="candidate-position">Mid / Senior  Angular Developer</p>
+                                <p class="candidate-experience">6+ years experience </p>
+                                <p class="candidate--view-profile mdc-button blue-border-btn">View profile</p>
+                                <p class="candidate--download-resume"><a href="#">Download Resume</a></p>
+                            </div><!-- end of find-alumni--candidate-->
+        
+                            <!-- One candidate -->
+                            <div class="one-candidate">
+                                <p class="candidate-name">Irinia Kurkina </p>
+                                <div class="candidate-photo"><img src="assets/images/candidate-photo.png" alt=""></div>
+                                <p class="candidate-position">Mid / Senior  Angular Developer</p>
+                                <p class="candidate-experience">6+ years experience </p>
+                                <p class="candidate--view-profile mdc-button blue-border-btn">View profile</p>
+                                <p class="candidate--download-resume"><a href="#">Download Resume</a></p>
+                            </div><!-- end of find-alumni--candidate-->
+        
+                            <!-- One candidate -->
+                            <div class="one-candidate">
+                                <p class="candidate-name">Irinia Kurkina </p>
+                                <div class="candidate-photo"><img src="assets/images/candidate-photo.png" alt=""></div>
+                                <p class="candidate-position">Mid / Senior  Angular Developer</p>
+                                <p class="candidate-experience">6+ years experience </p>
+                                <p class="candidate--view-profile mdc-button blue-border-btn">View profile</p>
+                                <p class="candidate--download-resume"><a href="#">Download Resume</a></p>
+                            </div><!-- end of find-alumni--candidate-->
+        
+                            <!-- One candidate -->
+                            <div class="one-candidate">
+                                <p class="candidate-name">Irinia Kurkina </p>
+                                <div class="candidate-photo"><img src="assets/images/candidate-photo.png" alt=""></div>
+                                <p class="candidate-position">Mid / Senior  Angular Developer</p>
+                                <p class="candidate-experience">6+ years experience </p>
+                                <p class="candidate--view-profile mdc-button blue-border-btn">View profile</p>
+                                <p class="candidate--download-resume"><a href="#">Download Resume</a></p>
+                            </div><!-- end of find-alumni--candidate-->
+        
+                            <!-- One candidate -->
+                            <div class="one-candidate">
+                                <p class="candidate-name">Irinia Kurkina </p>
+                                <div class="candidate-photo"><img src="assets/images/candidate-photo.png" alt=""></div>
+                                <p class="candidate-position">Mid / Senior  Angular Developer</p>
+                                <p class="candidate-experience">6+ years experience </p>
+                                <p class="candidate--view-profile mdc-button blue-border-btn">View profile</p>
+                                <p class="candidate--download-resume"><a href="#">Download Resume</a></p>
+                            </div><!-- end of find-alumni--candidate-->
+        
+                            <!-- One candidate -->
+                            <div class="one-candidate">
+                                <p class="candidate-name">Irinia Kurkina </p>
+                                <div class="candidate-photo"><img src="assets/images/candidate-photo.png" alt=""></div>
+                                <p class="candidate-position">Mid / Senior  Angular Developer</p>
+                                <p class="candidate-experience">6+ years experience </p>
+                                <p class="candidate--view-profile mdc-button blue-border-btn">View profile</p>
+                                <p class="candidate--download-resume"><a href="#">Download Resume</a></p>
+                            </div><!-- end of find-alumni--candidate-->
+        
+                            <!-- One candidate -->
+                            <div class="one-candidate">
+                                <p class="candidate-name">Irinia Kurkina </p>
+                                <div class="candidate-photo"><img src="assets/images/candidate-photo.png" alt=""></div>
+                                <p class="candidate-position">Mid / Senior  Angular Developer</p>
+                                <p class="candidate-experience">6+ years experience </p>
+                                <p class="candidate--view-profile mdc-button blue-border-btn">View profile</p>
+                                <p class="candidate--download-resume"><a href="#">Download Resume</a></p>
+                            </div><!-- end of find-alumni--candidate-->
+        
+                            <!-- One candidate -->
+                            <div class="one-candidate">
+                                <p class="candidate-name">Irinia Kurkina </p>
+                                <div class="candidate-photo"><img src="assets/images/candidate-photo.png" alt=""></div>
+                                <p class="candidate-position">Mid / Senior  Angular Developer</p>
+                                <p class="candidate-experience">6+ years experience </p>
+                                <p class="candidate--view-profile mdc-button blue-border-btn">View profile</p>
+                                <p class="candidate--download-resume"><a href="#">Download Resume</a></p>
+                            </div><!-- end of find-alumni--candidate-->
+        
+        
+                            <!-- One candidate -->
+                            <div class="one-candidate">
+                                <p class="candidate-name">Irinia Kurkina </p>
+                                <div class="candidate-photo"><img src="assets/images/candidate-photo.png" alt=""></div>
+                                <p class="candidate-position">Mid / Senior  Angular Developer</p>
+                                <p class="candidate-experience">6+ years experience </p>
+                                <p class="candidate--view-profile mdc-button blue-border-btn">View profile</p>
+                                <p class="candidate--download-resume"><a href="#">Download Resume</a></p>
+                            </div><!-- end of find-alumni--candidate-->
+        
+                        </div><!-- end of find-alumni--candidates-block-->
+        
+        
+                        <!-- BOTTOM PAGINATION -->
+                        <div class="pagination find-alumni--pagination-bottom">
+                            <button class="pagination-btn mdc-button pagination-btn-previous">
+                                <span class="mdc-button__label">Previous</span>
+                            </button>
+                            <div class="pagination-numbers">
+                                <span class="pagination-numbers--item">1</span>    
+                                <span class="pagination-numbers--item">2</span>  
+                                <span class="pagination-numbers--item pagination-numbers--item-active">3</span>  
+                                <span class="pagination-numbers--item">4</span>  
+                                <span class="pagination-numbers--item">5</span>  
+                            </div>
+                            <button class="pagination-btn mdc-button pagination-btn-next">
+                                <span class="mdc-button__label">Next</span>
+                            </button>
+                        </div>
+                    </div><!-- end of find-alumni--candidates--wraper-->
+                </div><!-- end of find-alumni--candidates-->
+            </div>
+        
+            <footer class="footer">
+                <div class="footer-top">
+                    <!-- SITE MAP and COURSES -->
+                    <div class="footer-top-wrapper">
+                        <!-- SITE MAP -->
+                        <div class="footer-top-section footer--site-map">
+                            <div class="footer-top-section--title">Site map</div>
+                            <div class="footer-top-section--items">
+                                <a href="#" class="footer-link footer-top-section--item">Home</a>
+                                <a href="#" class="footer-link footer-top-section--item">Why us</a>
+                                <a href="#" class="footer-link footer-top-section--item">Team</a>
+                                <a href="#" class="footer-link footer-top-section--item">Blog</a>
+                            </div>
+                        </div><!--  end of footer-top-section -->
+                        
+                        <!-- COURSES -->
+                        <div class="footer-top-section footer--courses">
+                                <div class="footer-top-section--title">Courses</div>
+                                <div class="footer-top-section--items">
+                                    <div class="footer-top-section--item">
+                                        <p><a class="footer-link" href="#">Web development</a></p>
+                                        <p>- 9 Week on-site</p>
+                                    </div>
+                                    <div class="footer-top-section--item">
+                                        <p><a class="footer-link" href="#">UI /UX DESIGN</a></p>
+                                        <p>- 6 Week on-site </p>
+                                    </div>
+                                    <div class="footer-top-section--item">
+                                        <p><a class="footer-link" href="#">DIGITAL MARKETING</a></p>
+                                        <p>- 1 Week on-site </p>
+                                    </div>
+                                </div>
+                        </div><!-- end of footer-top-section -->
+                            
+                        <!-- CONTACT US -->
+                        <div class="footer-top-section footer--contact-us">
+                                <div class="footer-top-section--title">Contact Us</div>
+                                <div class="footer-top-section--items">
+                                    <p class="footer-top-section--item contact-us-phone"><a class="footer-link" href="#">0861 642 779</a></p>
+                                    <p class="footer-top-section--item contact-us-email"><a class="footer-link" href="#">hello@mavenacademy.one</a></p>
+                                    <p class="footer-top-section--item contact-us-location"><a class="footer-link" href="#">Studio 108, Palmyra Road, Palmyra Junction, Claremont, Cape Town, 7708</a></p>
+                                    <p class="footer-top-section--item contact-us-secure">Secure payments by</p>
+                                </div>
+        
+                                <div class="payment-types">
+                                    <p class="visa"></p>
+                                    <p class="mastercard"></p>
+                                </div>
+                        </div><!-- end of footer-top-section -->
+                    </div><!--end of footer-top-wrapper-->
+        
+                    <!-- GET IN TOUCH -->
+                    <div class="footer-top-section">
+                        <form action="#" class="footer-form">
+                            <div class="footer-form-title">
+                                <p>Get in touch </p>
+                                <p>We're here to help.</p>
+                            </div>
+                            <div class="footer-top-select">
+                                <select class="selectBox">
+                                    <option>Select enquiry type</option>
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                            </div>
+                            <div class="footer-form--inputs-wrapper">
+                                <div class="mdc-text-field mdc-text-field1">
+                                    <input type="text" id="my-text-field" class="mdc-text-field__input">
+                                    <label class="mdc-floating-label" for="my-text-field">Name</label>
+                                </div>
+                                <div class="mdc-text-field mdc-text-field2">
+                                    <input type="text" id="my-text-field" class="mdc-text-field__input">
+                                    <label class="mdc-floating-label" for="my-text-field">Surname</label>
+                                </div>
+                                <div class="mdc-text-field mdc-text-field3">
+                                    <input type="text" id="my-text-field" class="mdc-text-field__input">
+                                    <label class="mdc-floating-label" for="my-text-field">Email</label>
+                                </div>
+                                <div class="mdc-text-field mdc-text-field4">
+                                    <input type="text" id="my-text-field" class="mdc-text-field__input">
+                                    <label class="mdc-floating-label" for="my-text-field">Tel</label>
+                                </div>
+                            </div><!--end of footer-form--inputs-wrapper-->
+                            <p><button class="mdc-button footer-form-submit" type="submit">Call me back</button></p>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="footer-copyright">
+                        <p>All Rights Reserved, MotorHappy (Pty) Ltd. An Authorised Financial Services Provider FSP 46123.</p>
+                        <p>*Warranties are underwritten by Regent Insurance – Authorised Financial Services Provider FSP 25511</p>
+                    </div>
+                    <div class="footer-social">
+                        <a href="#" class="footer-facebook mdc-button"></a>
+                        <a href="#" class="footer-twitter mdc-button"></a>
+                        <a href="#" class="footer-google-plus mdc-button"></a>
+                        <a href="#" class="footer-insta mdc-button"></a>
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div><!--end of mdc-drawer-app-content-->
+    <script type=text/javascript src="./app.js"></script>
+</body>
+</html>

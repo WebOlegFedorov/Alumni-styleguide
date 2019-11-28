@@ -1,0 +1,78 @@
+<svg
+  class="dashboard-sidebar-item--icon"
+  xmlns="http://www.w3.org/2000/svg"
+  width="43"
+  height="43"
+  viewBox="0 0 43 43"
+>
+  <g>
+    <g>
+      <g>
+        <path
+          fill="none"
+          stroke="#5b9de3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-miterlimit="50"
+          stroke-width="2.5"
+          d="M30 11a9 9 0 0 1-18 0V2v0h18v0z"
+        ></path>
+      </g>
+      <g>
+        <path
+          fill="none"
+          stroke="#5b9de3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-miterlimit="50"
+          stroke-width="2.5"
+          d="M4 41c0-9.389 7.611-17 17-17s17 7.611 17 17"
+        ></path>
+      </g>
+      <g>
+        <path
+          fill="none"
+          stroke="#5b9de3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-miterlimit="50"
+          stroke-width="2.5"
+          d="M2 2h39"
+        ></path>
+      </g>
+      <g>
+        <path
+          fill="none"
+          stroke="#5b9de3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-miterlimit="50"
+          stroke-width="2.5"
+          d="M12 10h18"
+        ></path>
+      </g>
+      <g>
+        <path
+          fill="none"
+          stroke="#5b9de3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-miterlimit="50"
+          stroke-width="2.5"
+          d="M5 2v13"
+        ></path>
+      </g>
+      <g>
+        <path
+          fill="none"
+          stroke="#5b9de3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-miterlimit="50"
+          stroke-width="2.5"
+          d="M13 26v0l8.5 7v0l8.5-7v0"
+        ></path>
+      </g>
+    </g>
+  </g>
+</svg>

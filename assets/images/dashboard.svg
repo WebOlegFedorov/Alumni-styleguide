@@ -1,0 +1,30 @@
+<svg class="dashboard-sidebar-item--icon" xmlns="http://www.w3.org/2000/svg" width="45" height="49" viewBox="0 0 45 49">
+  <g>
+    <g>
+        <g>
+            <path fill="none" stroke="#5b9de3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M13.47 25.93v1.525"></path>
+        </g>
+        <g>
+            <path fill="none" stroke="#5b9de3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M31.67 25.93v1.525"></path>
+        </g>
+        <g>
+            <path fill="none" stroke="#5b9de3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M40.773 22.871c0-4.067-36.403-4.067-36.403 0v-3.05c0-8.135 36.403-8.135 36.403 0z"></path>
+        </g>
+        <g>
+            <path fill="none" stroke="#5b9de3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M31.67 3.38c7.177 2.991 12.134 8.987 12.134 13.392.065 2.745-.7 5.445-2.192 7.744"></path>
+        </g>
+        <g>
+            <path fill="none" stroke="#5b9de3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M3.191 24.64a15.425 15.425 0 0 1-1.852-7.865c0-3.298 4.944-9.761 12.097-13.125"></path>
+        </g>
+        <g>
+            <path fill="none" stroke="#5b9de3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M18.02 7.621v0l1.517-6.101v0l3.033 3.05v0l3.034-3.05v0l1.517 6.101v0"></path>
+        </g>
+        <g>
+            <path fill="none" stroke="#5b9de3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M22.574 37.87c1.638 1.649 5.277 1.787 7.863 1.645.277-.015 2.536-.633.188-2.994-2.754-5.54-13.052-6.135-16.102 0-2.174 2.186-.362 2.963.186 2.994 2.587.144 6.225.004 7.865-1.646z"></path>
+        </g>
+        <g>
+            <path fill="none" stroke="#5b9de3" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="50" stroke-width="2" d="M4.374 22.88v1.525a3.042 3.042 0 0 0-3.034 3.05 3.042 3.042 0 0 0 3.034 3.051c.026 0 .05-.014.076-.016.78 9.485 8.662 16.784 18.126 16.784s17.347-7.3 18.125-16.784c.027 0 .049.016.075.016a3.042 3.042 0 0 0 3.034-3.05 3.042 3.042 0 0 0-3.034-3.05V22.88v0"></path>
+        </g>
+    </g>
+  </g>
+</svg>
