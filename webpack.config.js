@@ -10,7 +10,6 @@ module.exports = {
   context: path.resolve(__dirname, ""),
   entry: {
     app: ["./app.js"],
-    tooltipsApp: ["./tooltips/tooltips.js"],
     stylesheets: ["./app.scss"]
   },
   output: {
@@ -20,10 +19,7 @@ module.exports = {
   devServer: {
     port: 3000,
     historyApiFallback: {
-      rewrites: [
-        { from: /^\/app/, to: "/index.html" },
-        { from: /^\/tooltipsApp/, to: "./tooltips/tooltips.html" }
-      ]
+      rewrites: [{ from: /^\/app/, to: "/index.html" }]
     }
   },
   plugins: [
@@ -39,7 +35,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       chunks: ["tooltipsApp"],
-      template: "./tooltips/tooltips.html",
       filename: "./tooltips.html"
     }),
     new CopyPlugin([{ from: "./assets", to: "assets" }])

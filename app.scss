@@ -1,8 +1,8 @@
 $mdc-theme-primary: #4ca0e9;
 $mdc-theme-secondary: #4ca0e9;
-
 $mdc-theme-on-primary: #4ca0e9;
 $mdc-theme-on-secondary: #4ca0e9;
+
 @import "~@material/drawer/mdc-drawer";
 @import "~@material/button/mdc-button";
 @import "~@material/list/mdc-list";
@@ -26,8 +26,20 @@ $mdc-theme-on-secondary: #4ca0e9;
 @import "~@material/tab-indicator/mdc-tab-indicator";
 @import "~@material/tab/mdc-tab";
 
+html,
 body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: #343d42;
   font-family: "Titillium Web", sans-serif !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -78,6 +90,7 @@ h6 {
 .text-gray-bg {
   background-color: #acacac;
 }
+
 /*Radio button*/
 .radio-wrapper {
   .label-text {
@@ -121,6 +134,7 @@ h6 {
     left: 7px;
   }
 }
+
 /*Text colors*/
 .blue-text {
   color: #5b9de3;
@@ -189,15 +203,6 @@ h6 {
   }
 }
 
-@media (max-width: 767px) {
-  .section-title {
-    font-size: 20px;
-  }
-  .section-number {
-    font-size: 20px;
-  }
-}
-
 .container {
   max-width: 1280px;
   padding: 0 15px;
@@ -206,7 +211,7 @@ h6 {
   box-sizing: border-box;
 }
 
-/*One section styles(Typography, Navigation, ... )*/
+/*ONE SECTION STYLES(Typography, Navigation, ... )*/
 section {
   margin-bottom: 40px;
 }
@@ -232,8 +237,14 @@ section {
   font-size: 30px;
 }
 
-.mdc-drawer-scrim {
-  z-index: 11;
+// Media for Sections
+@media (max-width: 767px) {
+  .section-title {
+    font-size: 20px;
+  }
+  .section-number {
+    font-size: 20px;
+  }
 }
 
 .modals-section,
@@ -315,22 +326,7 @@ section {
 .mdc-chip {
 }
 
-html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  color: #343d42;
-}
-header {
-  width: 100%;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-/*BANNER*/
+/*BANNER(first block with logo)*/
 .banner {
   display: flex;
   margin: auto;
@@ -382,8 +378,7 @@ header {
   padding: 0 20px;
   display: inline-block;
 }
-
-/*banner logo*/
+/*end of BANNER(first block with logo)*/
 
 /*TYPOGRAPHY SECTION*/
 .typography-section {
@@ -576,6 +571,7 @@ header {
     }
   }
 }
+/*end of COLOR PALETTE SECTION*/
 
 /*FORMS AND FIELDS SECTION*/
 .forms-fields-section {
@@ -606,6 +602,7 @@ header {
 /*end of forms and fields*/
 
 // TABS SECTION
+/*desktop tabs*/
 .one-tab-info {
   display: none;
   &:nth-child(1) {
@@ -698,8 +695,9 @@ header {
   font-size: 14px;
   line-height: 1.5;
 }
+// end of desktop tabs
 
-/*Mobile version for Tabs type1 and Tabs type2*/
+/*Mobile tabs(mobile versions for Tabs type1 and Tabs type2)*/
 .dropdown-wrapper {
   display: none;
 }
@@ -1426,100 +1424,9 @@ header {
   display: flex;
   justify-content: center;
 }
-/*wrapper wich contains header, sidebar and main blocks(pages with sidebar)*/
-.sidebar-page-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.dashboard-main {
-  padding: 30px 40px;
-  background-color: #f3f6f9;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  .mdc-list-item__text {
-    color: #959595;
-    font-size: 14px;
-  }
-}
-
-.dashboard-sidebar {
-  display: flex;
-  position: fixed;
-  flex-direction: column;
-  min-width: 170px;
-  color: #5b9de3;
-  background-color: #36414c;
-  z-index: 100;
-  &-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 0;
-    cursor: pointer;
-    &-name {
-      font-family: "Titillium Web", sans-serif !important;
-      font-size: 16px;
-      font-weight: 700;
-      margin: 0;
-      color: #5b9de3;
-    }
-    &--icon {
-      margin-bottom: 18px;
-    }
-    &--request svg {
-      position: relative;
-      left: 5px;
-    }
-    &:hover {
-      background: #5b9de3;
-      color: #fff;
-      > svg path {
-        stroke: #fff;
-      }
-      > .dashboard-sidebar-item-name {
-        color: #fff;
-      }
-    }
-  }
-}
 
 /*Media for all pages with left sidebar*/
 @media screen and (max-width: 1024px) {
-  .mdc-drawer {
-    padding-top: 0;
-    .mdc-list-item {
-      padding: 14px 8px;
-      svg {
-        display: none;
-      }
-    }
-  }
-
-  .dashboard-hamburger {
-    display: block;
-    margin-right: auto;
-  }
-  .pages-main-title {
-    font-size: 32px;
-    line-height: 32px;
-    margin: 0 0 16px 12px;
-  }
-  .dashboard-main {
-    margin-top: 60px;
-    min-height: calc(100vh - 60px);
-    padding-bottom: 20px;
-    display: inline-flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .dashboard-sidebar {
-    transition: 0.4s ease;
-    .dashboard-sidebar-item {
-      padding: 20px 0;
-    }
-  }
   .sidebar-page-header {
     justify-content: space-between;
     font-size: 16px;
@@ -1546,9 +1453,6 @@ header {
       font-size: 1rem;
       margin-left: 1.5rem;
     }
-  }
-  .universal-drawer--main-content {
-    padding-top: 60px;
   }
 
   .black__header {
@@ -1634,20 +1538,6 @@ header {
   }
 }
 
-/*if screen height is less then 650px and width is more then 1024px then
-make dashboard sidebar icons smaller*/
-@media screen and (max-height: 650px) and (min-width: 1024px) {
-  .dashboard-sidebar-item--icon {
-    width: 30px;
-  }
-  .dashboard-sidebar-item--icon {
-    margin-bottom: 0;
-  }
-  .mdc-drawer .mdc-list-item {
-    padding: 13px 8px;
-  }
-}
-
 /*PAGINATION FOR ALL PAGES*/
 .pagination-section {
   .main-content {
@@ -1692,9 +1582,6 @@ make dashboard sidebar icons smaller*/
 }
 
 @media screen and (max-width: 700px) {
-  .dashboard-main {
-    padding: 10px 10px;
-  }
   .pagination {
     flex-wrap: wrap;
     justify-content: center;
@@ -1832,124 +1719,11 @@ make dashboard sidebar icons smaller*/
     }
   }
 }
+
+/*media for Iconography section*/
 @media screen and (max-width: 500px) {
   .iconography-section svg {
     width: 30px;
-  }
-}
-/*--------
-  FOOTER
----------*/
-.footer {
-  font-family: "Titillium Web", sans-serif !important;
-  width: 100%;
-  color: #fff;
-  &-link {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.4s ease;
-    &:hover {
-      opacity: 0.6;
-    }
-  }
-  &-top {
-    display: flex;
-    justify-content: space-between;
-    background-color: #36414c;
-    padding: 70px 80px;
-    &-section--title {
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      margin-bottom: 30px;
-    }
-    &-section--item {
-      font-weight: 600;
-      margin-bottom: 18px;
-      font-size: 12px;
-      text-decoration: none;
-      color: #fff;
-      transition: 0.4s ease;
-    }
-    &-section--items {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-  &-bottom {
-    background-color: #1f262d;
-    padding: 40px 80px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  &-copyright {
-    color: #c6def6;
-    p {
-      &:nth-child(1) {
-        margin-bottom: 4px;
-        font-size: 12px;
-      }
-      &:nth-child(2) {
-        font-size: 10px;
-      }
-    }
-  }
-  &-social {
-    display: flex;
-    a {
-      display: block;
-      transition: 0.4s ease;
-      &:not(:last-child) {
-        margin-right: 12px;
-      }
-      width: 34px;
-      min-width: 34px;
-      height: 34px;
-    }
-  }
-  &-facebook {
-    background: url("assets/images/facebook.png") no-repeat;
-  }
-  &-twitter {
-    background: url("assets/images/twitter.png") no-repeat;
-  }
-  &-google-plus {
-    background: url("assets/images/google-plus.png") no-repeat;
-  }
-  &-insta {
-    background: url("assets/images/insta.png") no-repeat;
-  }
-}
-.footer--courses {
-  .footer-top-section--item {
-    p:nth-child(1) {
-      margin-bottom: 1px;
-    }
-    p:nth-child(2) {
-      font-weight: 400;
-    }
-  }
-}
-
-.contact-us-phone {
-  font-size: 22px;
-  background: url("assets/images/footer-phone.png") left center no-repeat;
-}
-.contact-us-secure {
-  text-transform: uppercase;
-  background: url("assets/images/footer-secure.png") left center no-repeat;
-}
-.contact-us-email {
-  background: url("assets/images/footer-email.png") left center no-repeat;
-}
-.contact-us-location {
-  background: url("assets/images/footer-location.png") left center no-repeat;
-}
-.footer--contact-us {
-  max-width: 280px;
-  .footer-top-section--item {
-    padding-left: 30px;
   }
 }
 
@@ -2044,147 +1818,8 @@ make dashboard sidebar icons smaller*/
   }
 }
 
-.find-alumni--search-input::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  color: #343d42;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Titillium Web", sans-serif !important;
-}
-.find-alumni--search-input::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #343d42;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Titillium Web", sans-serif !important;
-}
-.find-alumni--search-input:-ms-input-placeholder {
-  /* IE 10+ */
-  color: #343d42;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Titillium Web", sans-serif !important;
-}
-.find-alumni--search-input:-moz-placeholder {
-  /* Firefox 18- */
-  color: #343d42;
-  font-size: 14px;
-  font-weight: 400;
-  font-family: "Titillium Web", sans-serif !important;
-}
-
 .find-alumni--skills-wrapper {
   font-family: "Titillium Web", sans-serif !important;
-}
-/*end of SEARCHBAR (index page "Find Alumni")*/
-
-/*CANDIDATES BLOCK(index page "Find Alumni")*/
-.find-alumni--candidates {
-  background: #fff;
-  margin-bottom: 55px;
-  &--wraper {
-    max-width: 1600px;
-    width: calc(100% - 50px);
-    margin: auto;
-  }
-  &-block {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .one-candidate {
-    font-family: "Titillium Web", sans-serif !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px 40px 20px;
-    width: 410px;
-    box-shadow: 0 15px 30px rgba(25, 71, 128, 0.2);
-    border-radius: 5px;
-    background-color: #fff;
-    margin-bottom: 65px;
-  }
-  .candidate {
-    &-name {
-      color: #494949;
-      font-size: 25px;
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-    &-photo {
-      width: 180px;
-      height: 180px;
-      border-radius: 100%;
-      overflow: hidden;
-      margin-bottom: 20px;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-    &-position {
-      color: #4a5054;
-      font-size: 20px;
-      font-weight: 700;
-      max-width: 240px;
-      text-align: center;
-      line-height: 23px;
-    }
-    &-experience {
-      color: #8b8b8b;
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 24px;
-      margin-top: -5px;
-      margin-bottom: 16px;
-    }
-    &--view-profile {
-      transition: 0.4s ease;
-      font-weight: 700;
-      color: #4ca0e9;
-      margin-bottom: 18px;
-    }
-    &--download-resume {
-      a {
-        font-family: "Titillium Web", sans-serif !important;
-        color: #acacac;
-        font-size: 14px;
-        font-weight: 600;
-        text-decoration: underline;
-        transition: 0.4s ease;
-        &:hover {
-          opacity: 0.85;
-        }
-      }
-    }
-  }
-}
-.find-alumni--pagination-top {
-  margin-bottom: 50px;
-}
-/*end of CANDIDATES BLOCK(index page "Find Alumni")*/
-
-/*MEDIA FOR INDEX PAGE(Find Alumni page with candidates)*/
-@media screen and (max-width: 1700px) {
-  .find-alumni--candidates {
-    &--wraper {
-      max-width: 1300px;
-    }
-    .one-candidate {
-      width: 310px;
-    }
-  }
-}
-
-@media screen and (max-width: 1200px) {
-  .find-alumni--candidates {
-    &--wraper {
-      max-width: 900px;
-    }
-    .one-candidate {
-      width: 210px;
-    }
-  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -2194,32 +1829,6 @@ make dashboard sidebar icons smaller*/
   .universal__header-btn.blue {
     padding: 0 20px;
     height: 43px;
-  }
-  .dashboard-main {
-    margin-left: 0;
-  }
-  .find-alumni--search {
-    padding: 25px 20px 30px 20px;
-    margin-bottom: 35px;
-    &-filters {
-      position: static;
-      margin-top: 10px;
-    }
-    &-input {
-      width: 100%;
-    }
-    &-header {
-      font-size: 42px;
-      line-height: 40px;
-    }
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .find-alumni--candidates .one-candidate {
-    width: calc(50% - 30px);
-    max-width: 400px !important;
-    box-sizing: border-box;
   }
 }
 
@@ -2240,33 +1849,6 @@ make dashboard sidebar icons smaller*/
 }
 
 @media screen and (max-width: 700px) {
-  .find-alumni--candidates {
-    margin-bottom: 25px;
-    .one-candidate {
-      width: calc(50% - 20px);
-      margin-bottom: 35px;
-    }
-    .candidate {
-      &-photo {
-        width: 120px;
-        height: 120px;
-      }
-      &--view-profile {
-        padding: 20px;
-      }
-      &-position {
-        font-size: 16px;
-        line-height: 20px;
-      }
-    }
-  }
-  .find-alumni--pagination-top {
-    margin-bottom: 20px;
-  }
-  .find-alumni--search-header {
-    font-size: 30px;
-    line-height: 35px;
-  }
   .buttons-and-modals-wrapper {
     flex-direction: column;
     button {
@@ -2299,48 +1881,6 @@ make dashboard sidebar icons smaller*/
   }
 }
 
-@media screen and (max-width: 500px) {
-  .find-alumni--candidates {
-    .one-candidate {
-      width: calc(50% - 10px);
-      padding: 20px 10px 20px 10px;
-    }
-    .candidate {
-      &-photo {
-        width: 90px;
-        height: 90px;
-      }
-      &-name {
-        font-size: 19px;
-        line-height: 23px;
-        margin-bottom: 12px;
-      }
-      &-position {
-        font-size: 13px;
-        line-height: 15px;
-        margin-bottom: 10px;
-      }
-      &-photo {
-        margin-bottom: 13px;
-      }
-      &--view-profile {
-        padding: 15px 10px;
-        font-size: 14px;
-        margin-bottom: 13px;
-      }
-      &--download-resume a {
-        font-size: 12px;
-      }
-      &-experience {
-        line-height: 14px;
-      }
-    }
-
-    .inputs .inputs-wrapper {
-      flex-direction: column;
-    }
-  }
-}
 @media screen and (max-width: 460px) {
   .courses-table {
     .mdc-data-table__header-cell:nth-child(2) {
@@ -2365,6 +1905,7 @@ make dashboard sidebar icons smaller*/
     margin-bottom: 30px;
   }
 }
+
 /*Visible placeholder for all pages*/
 ::-webkit-input-placehsolder {
   opacity: 1 !important;
@@ -2830,9 +2371,9 @@ make dashboard sidebar icons smaller*/
     color: #777171;
   }
 }
-/*-------------------------
-    EI fixes for upload
---------------------------*/
+/*------------------------------
+    EI fixes for upload block
+-------------------------------*/
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .cv__upload-plus i {
     position: relative;

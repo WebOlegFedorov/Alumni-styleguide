@@ -1,116 +1,152 @@
-import { MDCChipSet } from "@material/chips";
-import { MDCDrawer } from "@material/drawer";
 import { MDCTopAppBar } from "@material/top-app-bar";
+import { MDCDrawer } from "@material/drawer";
+import { MDCDialog } from "@material/dialog";
 import { MDCMenu } from "@material/menu";
-import { MDCTextField } from "@material/textfield";
-import { MDCRipple } from "@material/ripple";
+import { MDCFormField } from "@material/form-field";
+import { MDCCheckbox } from "@material/checkbox";
 
-window.onload = function() {
-  var state = {
-    fixedSideBar: true,
-    drawer: null
-  };
+jQuery(document).ready(() => new tooltips().init());
 
-  if ($("div").hasClass("mdc-chip-set")) {
-    const chipSetEl = document.querySelector(".mdc-chip-set");
-    const chipSet = new MDCChipSet(chipSetEl);
-  }
+/*ACCORDION*/
+var acc = document.getElementsByClassName("accordion");
+var i;
 
-  function drawer(state) {
-    state.drawer = MDCDrawer.attachTo(document.querySelector(".mdc-drawer"));
-    const topAppBar = MDCTopAppBar.attachTo(document.getElementById("app-bar"));
-    topAppBar.setScrollTarget(document.getElementById("main-content"));
-    topAppBar.listen(
-      "MDCTopAppBar:nav",
-      () => (state.drawer.open = !state.drawer.open)
-    );
-  }
-  drawer(state);
-
-  function openMenu() {
-    const menu = new MDCMenu(document.querySelector(".mdc-menu"));
-    menu.open = !menu.open;
-  }
-
-  jQuery(".open-submenu").click(() => openMenu());
-
-  function changeSideBarType(context, state) {
-    console.log(state);
-    if (context.innerWidth < 1024 && state.fixedSideBar) {
-      console.log("hew1");
-      state.fixedSideBar = false;
-      jQuery(".mdc-drawer").addClass("mdc-drawer--modal");
-    }
-
-    if (context.innerWidth > 1024 && !state.fixedSideBar) {
-      state.drawer.open = false;
-      state.fixedSideBar = true;
-      jQuery(".mdc-drawer").removeClass("mdc-drawer--modal");
-    }
-  }
-
-  jQuery(window).resize(function() {
-    changeSideBarType(this, state);
-  });
-
-  function initSideBar(context, state) {
-    if (context.innerWidth < 1024) {
-      state.fixedSideBar = false;
-      jQuery(".mdc-drawer").addClass("mdc-drawer--modal");
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
     } else {
-      state.fixedSideBar = true;
-      jQuery(".mdc-drawer").removeClass("mdc-drawer--modal");
+      panel.style.maxHeight = panel.scrollHeight + "px";
     }
-  }
-
-  initSideBar(window, state);
-
-  /*Dropdown menu*/
-  const menu = new MDCMenu(document.querySelector(".mdc-menu"));
-  $("#header-menu-button").click(function() {
-    $("#header-dropdown-menu").toggleClass("mdc-menu-surface--open");
   });
+}
+/*end of accordion*/
 
-  if ($("div").hasClass("mdc-button")) {
-    /* Check if current page contains mdc-button  - then initialize Ripple effect*/
-    const buttonRipple = new MDCRipple(document.querySelector(".mdc-button")); //button
+class tooltips {
+  constructor() {}
+
+  /*Menu(appears after click on 3 dots inside Admin Table)*/
+  openMenu(context) {
+    new MDCMenu(
+      jQuery(context)
+        .parent()
+        .find(".mdc-menu")[0]
+    ).open = true;
   }
 
-  if ($("div").hasClass("mdc-text-field")) {
-    /* Check if current page contains inputs*/
-    const textField1 = new MDCTextField(
-      document.querySelector(".mdc-text-field1")
-    );
-    const textField2 = new MDCTextField(
-      document.querySelector(".mdc-text-field2")
-    );
-    const textField3 = new MDCTextField(
-      document.querySelector(".mdc-text-field3")
-    );
-    const textField4 = new MDCTextField(
-      document.querySelector(".mdc-text-field4")
-    );
+  /*DIALOG(appears after click on 3 dots inside Admin Table->Reply row)*/
+  openDialog() {
+    new MDCDialog(document.querySelector(".mdc-dialog")).open();
   }
 
-  /*Check the number of notifications in the header of the page
-    (If notifications number is less then 10, or more then 10).
-    According to it - change "left" css property of number(inside heart icon)*/
+  // Tabs. Desktop
+  changeTab(context) {
+    console.log(context); //context = clicked element
+    $(context)
+      .closest(".tab-one-type")
+      .find(".tab")
+      .removeClass("tab-active");
+    $(context).addClass("tab-active");
+    // Get id number of clicked Tab
+    var currentId = $(".tab").index(context);
 
-  function checkNotifNumber() {
-    /*Check if current page header contains div with notification number(inside heart)*/
-    if ($("p").hasClass("header-notifications--number")) {
-      let notifNumberBlock = document.getElementById(
-        "header-notifications--number"
-      );
-      let notifNumberText = document.getElementById(
-        "header-notifications--number"
-      ).innerText;
-      if (notifNumberText < 10) {
-        notifNumberBlock.style.right = "12px";
-      } else {
-        notifNumberBlock.style.right = "8px";
-      }
-    }
+    // hide all the tabs, but clicked one inside clicked tab parent.
+    $(context)
+      .closest(".tab-one-type")
+      .find(".one-tab-info")
+      .css("display", "none");
+    // Show tab info with same the same id, like clicked tab
+    $(".one-tab-info")
+      .eq(currentId)
+      .css("display", "block");
   }
-  setInterval(checkNotifNumber, 500);
-};
+
+  // Tabs. Mobile (mobile version of tabs look like dropdowns).
+  changeTabMob(context) {
+    //context = clicked element
+    console.log(context);
+    $(context)
+      .closest(".tab-one-type")
+      .find(".tab")
+      .removeClass("tab-active");
+
+    $(".dropdown-item").removeClass("tab-active");
+    $(context).addClass("tab-active");
+    // Get id number of clicked Tab
+    var currentId = $(".dropdown-item").index(context);
+    // hide all the tabs,but clicked one inside clicked tab parent.
+    $(context)
+      .closest(".tab-one-type")
+      .find(".one-tab-info")
+      .css("display", "none");
+    // Show tab info with same the same id, like clicked tab
+    $(".one-tab-info")
+      .eq(currentId)
+      .css("display", "block");
+  }
+
+  // Open/hide dropdown items + toggle "opened" class on dropdown title. Tabs.Mobile version.
+  toggleDropdown(context) {
+    $(context)
+      .find(".dropdown-title")
+      .toggleClass("opened");
+    $(context)
+      .find(".dropdown-items")
+      .slideToggle(350);
+  }
+
+  // Тabs. Mobile. Change dropdown title after click on option.
+  changeDropdownTitle(context) {
+    $(".dropdown-items span").removeClass("active");
+    $(context).addClass("active");
+  }
+
+  init() {
+    const state = this.state;
+    const changeTab = this.changeTab;
+    const changeTabMob = this.changeTabMob;
+    const openMenu = this.openMenu;
+    const openDialog = this.openDialog;
+    const toggleDropdown = this.toggleDropdown;
+    const changeDropdownTitle = this.changeDropdownTitle;
+
+    // Tabs. Desktop
+    jQuery(".tab").click(function() {
+      changeTab(this);
+    });
+
+    // Tabs. Mobile
+    jQuery(".dropdown-item").click(function() {
+      changeTabMob(this);
+    });
+
+    // Tabs. Mobile. Open/hide dropdown items + toggle "opened" class on dropdown title.
+    jQuery(".dropdown-wrapper").click(function() {
+      toggleDropdown(this);
+    });
+
+    // Тabs. Mobile. Change dropdown title after click on option.
+    jQuery(".dropdown-wrapper span").click(function() {
+      changeDropdownTitle(this);
+    });
+
+    // Checkboxes initialization
+    const checkbox = new MDCCheckbox(document.querySelector(".mdc-checkbox"));
+    const formField = new MDCFormField(
+      document.querySelector(".mdc-form-field")
+    );
+    formField.input = checkbox;
+
+    /*Menu(appears after click on 3 dots inside Admin Table)*/
+    jQuery(".mdc-data-table__cell-dots").click(function() {
+      openMenu(this);
+    });
+
+    /*DIALOG(appears after click on 3 dots inside Admin Table->Reply row)*/
+    jQuery(".reply").click(function() {
+      openDialog();
+    });
+  }
+}
